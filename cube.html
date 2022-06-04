@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cube</title>
+    <style>
+        body{
+            background-color: grey;
+        }
+        .container{
+            /* border: 2px solid lawngreen; */
+            width: 300px;
+            height: 300px;
+            margin: 300px auto;
+            perspective: 600px;
+        }
+        .cube{
+            width: 300px;
+            height: 300px;
+            transform-style: preserve-3d;
+            transform: translateZ(-150deg)
+             rotateX(30deg);
+             transform: rotateX(30deg);
+            position: relative;
+            animation: cube 3s  infinite ;
+            
+        }
+        .face{
+            position: absolute;
+            width: 300px;
+            height: 300px;
+        }
+        .Front{
+            background-color: blue;
+            transform: rotateY(0deg) translateZ(150px);
+        }
+        .Right{
+            background-color: red;
+            transform: rotatex(-90deg) translateZ(150px);
+            /* transform: skew(30deg 20deg); */
+            /* transform: rotatez(90deg); */
+        }
+        .Back{
+            background-color: green;
+            transform: rotatey(180deg) translateZ(150px);
+        }
+        .Top{
+            background-color: yellow;
+            transform: rotateY(90deg) translateZ(150px);
+        }
+        .Left{
+            background-color: aqua;
+            transform: rotateY(-90deg) translateZ(150px);
+        }
+        .Bottom{
+            background-color: orange;
+            transform: rotateY(-90deg) translateZ(150px);
+        }
+        @keyframes cube {
+             0%{
+                 transform: rotatex(0deg) rotatey(0deg);
+             }
+        to {
+            transform: rotatex(30deg) rotatey(360deg);
+        }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="cube">
+            <div class= "face Front"></div>
+            <div class="face Right"></div>
+            <div class="face Back"></div>
+            <div class="face Top"></div>
+            <div class="face Left"></div>
+            <div class="face Bottom"></div>
+        </div>
+    </div>
+    
+</body>
+</html>
